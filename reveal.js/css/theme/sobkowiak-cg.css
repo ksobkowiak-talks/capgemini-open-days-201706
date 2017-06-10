@@ -17,7 +17,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
  *********************************************/
 body {
   background: #111111;
-  background-image: url("../../../../assets/images/background-cg.png");
+  background-image: url("../../../assets/images/background-cg.png");
   background-size: cover;
   background-color: #111111; }
 
