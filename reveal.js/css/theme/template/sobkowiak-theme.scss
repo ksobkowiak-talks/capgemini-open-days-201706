@@ -1,0 +1,244 @@
+/**
+ * Black theme for reveal.js. This is the opposite of the 'white' theme.
+ *
+ * By Hakim El Hattab, http://hakim.se
+ */
+
+// Include theme-specific fonts
+@import url(https://fonts.googleapis.com/css?family=Sniglet|Walter+Turncoat);
+
+
+section.has-light-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: #222;
+	}
+}
+
+@mixin bodyBackground() {
+	background: $backgroundColor;
+	background-image: $backgroundImage;
+	background-size: cover;
+}
+
+// Theme template ------------------------------
+@import "theme";
+// ---------------------------------------------
+
+html {
+	@include bodyBackground();
+	background-color: $backgroundColor;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+	text-align: center;
+}
+
+.reveal .title h1 {
+  margin: 100px 0 20px 0;
+}
+
+.reveal section img {
+	margin: 15px 0px;
+	background: none;
+	border: none;
+
+	box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+/*******************************************************
+ * Asciidoctor Table style rendering
+ * Feb 27, CHM: Added & Refactor to display the borders
+ * Mar 02, CHM: Add caption to display the Table title with a different style, color
+ * Mar 03, CHM: Improve style to be compliant with Redhat styles
+ * Mar 06, CHM: Add a noredheader class to avoid to display the first line in red of a table containing images, ..
+ ******************************************************/
+/* line 352, ../conference-redhat.scss */
+table.tableblock, table.tableblock td {
+	border-style: none;
+	border-color: #F3F4F4;
+	border-width: 0px;
+	border-collapse: collapse;
+	border-spacing: 0px;
+	padding: 5px;
+}
+
+/* line 361, ../conference-redhat.scss */
+table.tableblock > caption {
+	line-height: 1.4;
+	color: #333333;
+	margin-top: 0.2em;
+	margin-bottom: 0.5em;
+	overflow: visible;
+	max-width: 0;
+	white-space: nowrap;
+	display: table-caption;
+}
+
+/* line 372, ../conference-redhat.scss */
+table.tableblock:not(.noredheader) thead tr, table.tableblock:not(.noredheader) :not(thead) + tbody tr:first-child td {
+	background-color: #a70000;
+	text-align: left;
+	padding: 10px;
+	color: white;
+	font-size: 24px;
+}
+
+/* line 380, ../conference-redhat.scss */
+table.tableblock.noredheader tr:first-child td {
+	/*  background-color: #EEEEEE;*/
+}
+
+/* line 384, ../conference-redhat.scss */
+table.tableblock tr:nth-child(even) {
+	/*  background: white;*/
+}
+
+/* line 388, ../conference-redhat.scss */
+table.tableblock tr:nth-child(odd) {
+	/*  background-color: #F3F4F4;*/
+}
+
+/* line 392, ../conference-redhat.scss */
+th.tableblock.halign-left, td.tableblock.halign-left {
+	text-align: left;
+}
+
+/* line 396, ../conference-redhat.scss */
+th.tableblock.halign-right, td.tableblock.halign-right {
+	text-align: right;
+}
+
+/* line 400, ../conference-redhat.scss */
+th.tableblock.halign-center, td.tableblock.halign-center {
+	text-align: center;
+}
+
+/* line 404, ../conference-redhat.scss */
+th.tableblock.valign-top, td.tableblock.valign-top {
+	vertical-align: top;
+}
+
+/* line 408, ../conference-redhat.scss */
+th.tableblock.valign-bottom, td.tableblock.valign-bottom {
+	vertical-align: bottom;
+}
+
+/* line 412, ../conference-redhat.scss */
+th.tableblock.valign-middle, td.tableblock.valign-middle {
+	vertical-align: middle;
+}
+
+.logo  img {
+	position: relative;
+	top: -30px;
+	left: 0px;
+	border: 0;
+	background: 0;
+	box-shadow: unset;
+}
+
+.logo-left  img {
+	position: relative;
+	top: -180px;
+	left: -250px;
+	border: 0;
+	background: 0;
+	box-shadow: unset;
+	visibility: $logoLeftVisibility;
+}
+
+.cover {
+	position:absolute;
+	top:450px;
+	left:10px;
+	right:10px;
+}
+
+.cover .speaker-title {
+	font-size: 80%
+}
+
+.cover .event {
+	font-size: 80%
+}
+
+/*********************************************
+ * Corporate Logo Header Image
+ * Feb 26, CHM: Changed the height from 80px to 0px
+ *********************************************/
+/* line 116, ../conference-redhat.scss */
+.header {
+	position: absolute;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 0px;
+	font-family: "Liberation Sans", "Overpass", "Open Sans", sans-serif;
+	font-size: 20px;
+	text-align: center;
+}
+
+.newline:before {
+		content: '\A';
+		white-space:pre;
+}
+
+/******************************************
+ * Fill screen to 100% & align text on left
+ * Feb 26, CHM : Add top: 370px to fill the screen to 100%
+ * Mar 24 3015, CHM : Remove top due to cutoff with safari, firefox & add margin-top
+ ******************************************/
+
+.reveal .slides section:not(:first-of-type) {
+	text-align: $slideTitleAlign;
+	/* margin-top: $slides-margin-top; WE don't use it as the value is assigned by Revealjs */
+}
+
+.thanks {
+	text-align: center;
+}
+
+.thanks .underline {
+	position: relative;
+	top: -40px;
+}
+
+.centering {
+	text-align: center;
+}
+
+.tiny-text p,
+.tiny-text .content {
+	font-size: 0.7em;
+}
+
+.small-text p,
+.small-text .content {
+	font-size: 0.8em;
+}
+
+.medium-text p,
+.medium-text .content {
+font-size: 1.2em;
+}
+
+.large-text p,
+.large-text .content  {
+	font-size: 2em;
+}
+
+.listingblock .highlight {
+	font-size: 0.65em;
+	width: 100%;
+}
+
+.listingblock .pygments {
+	font-size: 0.65em;
+	width: 100%;
+}
