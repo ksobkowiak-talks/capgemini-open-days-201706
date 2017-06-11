@@ -89,7 +89,7 @@ public class EurekaApplication {
 }</code></pre></div></div></section><section id="_eureka_client"><h2>Eureka Client</h2><div class="ulist"><ul><li><p>Registers automatically with the Eureka server under a defined name</p></li><li><p>Can access other Microservices</p></li><li><p>Integrates Load Balancing with Ribbon using</p><div class="ulist"><ul><li><p><code>DiscoveryClient</code>, <code>FeignClient</code></p></li><li><p>Eureka aware <code>RestTemplate</code> (sample later)</p></li></ul></div></li><li><p><code>@EnableDiscoveryClient</code> or <code>@EnableEurekaClient</code></p></li><li><p>Dependency to <code>spring-cloud-starter-eureka</code></p></li></ul></div>
 <div class="listingblock"><div class="content"><pre class="highlight"><code>eureka.client.serviceUrl.defaultZone=http://eureka:8761/eureka/
 eureka.instance.leaseRenewalIntervalInSeconds=5
-spring.application.name=catalog
+spring.application.name=ipservice
 eureka.instance.metadataMap.instanceId=ipservice:${random.value}
 eureka.instance.preferIpAddress=true</code></pre></div></div></section><section id="__code_resttemplate_code_load_balancing"><h2><code>RestTemplate</code> &amp; Load Balancing</h2><div class="ulist"><ul><li><p><code>@RibbonClient</code></p></li><li><p>Dependency to <code>spring-cloud-starter-ribbon</code></p></li></ul></div>
 <div class="listingblock"><div class="content"><pre class="highlight"><code class="java language-java">@RibbonClient("ipclient")
